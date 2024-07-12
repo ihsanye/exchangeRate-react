@@ -8,14 +8,15 @@ let API_KEY = 'fca_live_XURFCn0clS9MvrDj8UceJgHjYAJfBsFPyFEFeBXE';
 
 function Currency() {
 
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState();
     const [fromCurrency, setFromCurrency] = useState('USD');
     const [toCurrency, setToCurrency] = useState('TRY');
-    const [result, setResult] = useState(0);
+    const [result, setResult] = useState();
 
     const exchange = async () => {
         const response = await axios.get(`${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`);
-
+        const result = response.data.data[toCurrency] * amount;
+        setResult(result.toFixed(2));
     }
 
     return (
@@ -38,11 +39,8 @@ function Currency() {
                 <input value={result} type='number' className='result' placeholder='Target Currency'></input>
             </div>
             <button onClick={exchange} className='exchange-button'>Convert</button>
-
         </div>
     )
 }
 
 export default Currency
-
-//https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_XURFCn0clS9MvrDj8UceJgHjYAJfBsFPyFEFeBXE&base_currency=USD
