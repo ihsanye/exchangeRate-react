@@ -1,0 +1,43 @@
+.currency-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 200px;
+    width: 600px;
+
+}
+
+#app-title {
+    margin-top: -5px;
+    font-size: 28px;
+}
+
+.to-cur,
+.from-cur {
+    height: 25px;
+    width: 50px;
+    margin: 0px 5px;
+    border-radius: 5px;
+}
+
+.amount,
+.result {
+    height: 25px;
+    width: 150px;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.exchange-button {
+    width: 100px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: violet;
+    margin-top: 12px;
+    cursor: pointer;
+}
